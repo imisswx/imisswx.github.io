@@ -1,0 +1,76 @@
+.site-header {
+  position: relative;
+  right: 0;
+  height: var(--header-height);
+  width: 100%;
+  z-index: 10;
+
+  &::before,
+  &::after {
+    content: "";
+    display: table;
+    table-layout: fixed;
+  }
+
+  &::after {
+    clear: both;
+  }
+
+  &.iconsearch {
+    font-size: 1.125rem;
+    position: relative;
+    z-index: 10;
+
+    &:hover {
+      cursor: pointer;
+      color: var(--theme-color);
+    }
+  }
+
+  & .header-inner {
+    height: var(--header-height);
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    position: fixed;
+    padding: 0 1.25rem;
+    box-sizing: border-box;
+    top: 0;
+    transition: top 0.3s ease-in-out;
+  }
+
+  @mixin screens-md {
+    &,
+    & .header-inner {
+      height: 2.5rem;
+      position: absolute;
+    }
+
+    & .header-inner {
+      padding: 0;
+    }
+  }
+}
+
+/* 导航栏向下滚动样式 */
+.yya {
+  & .header-inner {
+    position: fixed;
+    top: var(--yya-header-top);
+    background: var(--header-background);
+    box-shadow: 0 1px 40px -8px #00000080;
+  }
+
+  &.sabit {
+    & .header-inner {
+      top: 0;
+    }
+  }
+
+  @mixin screens-md {
+    & .header-inner {
+      background: transparent;
+      box-shadow: none;
+    }
+  }
+}

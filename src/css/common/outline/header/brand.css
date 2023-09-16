@@ -1,0 +1,66 @@
+.site-branding {
+  float: left;
+  position: relative;
+  line-height: var(--header-height);
+  animation: sitetop 1s;
+
+  & .site-title {
+    margin: 0;
+
+    & a {
+      color: var(--body-color);
+      font-weight: 400;
+
+      &:hover {
+        color: var(--theme-color);
+      }
+    }
+
+    & img {
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    & a,
+    & img {
+      height: 2.5rem;
+      width: 2.5rem;
+      margin-top: 1rem;
+      opacity: 0.75;
+      object-fit: cover;
+      transition: color 0.2s ease-out, border 0.2s ease-out, opacity 0.2s ease-out;
+    }
+  }
+
+  @mixin screens-md {
+    float: right;
+    height: 2.5rem;
+    line-height: 2.5rem;
+
+    & .site-title {
+      font-size: 1.25rem;
+      margin-right: 10px;
+
+      & img {
+        height: 2rem;
+        width: 2rem;
+        border-radius: 100%;
+        margin: 0;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+@keyframes sitetop {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

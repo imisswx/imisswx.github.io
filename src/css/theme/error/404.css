@@ -1,0 +1,35 @@
+.error-404 {
+  margin-top: -120px;
+  margin-bottom: 20px;
+  
+  & .error-img {
+    text-align: center;
+  }
+
+  & .err-button {
+    text-align: center;
+
+    &.back {
+      & a {
+        padding: 10px 30px;
+        margin: 0 10px;
+        border: 1px solid var(--theme-color);
+        color: var(--theme-color);
+        border-radius: 50px;
+
+        &:hover {
+          box-shadow: 0 0 4px var(--theme-color);
+        }
+      }
+
+      & .gohome {
+        background: var(--theme-color);
+        color: #fff;
+      }
+    }
+  }
+
+  @mixin screens-md {
+    margin-top: 0;
+  }
+}

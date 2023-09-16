@@ -1,0 +1,50 @@
+.site-sidebar {
+  width: 0;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: var(--background-color);
+  overflow: hidden;
+  z-index: 9;
+  pointer-events: none;
+  transition: width .5s ease-out;
+
+  &::after,
+  &::before {
+    transition: left .5s;
+    background: var(--theme-color);
+    position: fixed;
+    content: "";
+    width: 1.875rem;
+    height: 0.1875rem;
+    top: 20px;
+    left: -100px;
+    pointer-events: auto;
+    opacity: 0;
+  }
+
+  &.open {
+    width: 15.625rem;
+
+    &::before,
+    &::after {
+      left: 260px;
+      opacity: 1;
+    }
+
+    &::before {
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      transform: rotate(45deg);
+    }
+  }
+
+  & .sidebar-inner {
+    height: 100%;
+    width: 100%;
+    pointer-events: auto;
+  }
+}

@@ -1,0 +1,25 @@
+<th:block th:fragment="top_social">
+  <th:block th:each="item : ${theme.config.sns.items}">
+    <th:block th:if="${item.url_type == 'normal'}">
+      <li>
+        <a
+          th:href="${item.url}"
+          target="_blank"
+          class="social-sina"
+          aria-label="access the webmaster's social media networks"
+        >
+          <img th:src="@{/assets/images/sns/{icon}(icon=${item.icon})}" alt="sns" />
+        </a>
+      </li>
+    </th:block>
+    <th:block th:if="${item.url_type == 'image'}">
+      <li class="wechat">
+        <a href="#" aria-label="display the WeChat QR code"></a>
+        <img th:src="@{/assets/images/sns/{icon}(icon=${item.icon})}" alt="wechat" />
+        <div class="wechatInner">
+          <img th:src="${item.url}" alt=""/>
+        </div>
+      </li>
+    </th:block>
+  </th:block>
+</th:block>

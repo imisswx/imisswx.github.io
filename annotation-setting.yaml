@@ -1,0 +1,85 @@
+apiVersion: v1alpha1
+kind: AnnotationSetting
+metadata:
+  generateName: annotation-setting-
+spec:
+  targetRef:
+    group: ""
+    kind: MenuItem
+  formSchema:
+    - $formkit: "text"
+      name: "icon"
+      label: "图标"
+      help: "图标名称，支持所有 iconify 图标。例如 https://icones.netlify.app/"
+    - $formkit: "text"
+      name: "animation"
+      label: "动画"
+      help: "对图标所使用的微动画，支持的类型查看 https://l-lin.github.io/font-awesome-animation/#animation-list"
+---
+
+apiVersion: v1alpha1
+kind: AnnotationSetting
+metadata:
+  generateName: annotation-setting-
+spec:
+  targetRef:
+    group: content.halo.run
+    kind: Post
+  formSchema:
+    - $formkit: radio
+      name: randomImage
+      label: 使用随机图
+      value: "true"
+      options:
+        - value: "true"
+          label: 开启
+        - value: "false"
+          label: 关闭
+    - $formkit: radio
+      name: original
+      label: 是否原创
+      value: "false"
+      options:
+        - value: "true"
+          label: 是
+        - value: "false"
+          label: 否
+    - $formkit: radio
+      name: toc
+      label: 自动生成目录
+      value: "true"
+      options:
+        - value: "true"
+          label: 开启
+        - value: "false"
+          label: 关闭
+
+---
+
+apiVersion: v1alpha1
+kind: AnnotationSetting
+metadata:
+  generateName: annotation-setting-
+spec:
+  targetRef:
+    group: content.halo.run
+    kind: SinglePage
+  formSchema:
+    - $formkit: radio
+      name: randomImage
+      label: 使用随机图
+      value: "true"
+      options:
+        - value: "true"
+          label: 开启
+        - value: "false"
+          label: 关闭
+    - $formkit: radio
+      name: toc
+      label: 自动生成目录
+      value: "true"
+      options:
+        - value: "true"
+          label: 开启
+        - value: "false"
+          label: 关闭
