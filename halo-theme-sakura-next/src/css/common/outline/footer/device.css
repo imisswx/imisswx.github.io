@@ -1,9 +1,0 @@
-.footer-device {
-  display: flex;
-  justify-content: center;
-
-  & p {
-    margin: 0;
-    margin-right: 4px;
-  }
-}
